@@ -8,8 +8,8 @@ profile:
   image: profile_pic.jpg
   image_circular: false
   more_info: >
-    <p>Permanent researcher in energy systems modeling</p>
-    <p>CEA Grenoble – France</p>
+    <p>PhD. Candidate</p>
+    <p>University of Michigan</p>
 selected_papers: false
 social: false
 announcements:
