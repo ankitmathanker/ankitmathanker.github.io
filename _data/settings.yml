@@ -6,7 +6,6 @@ disqus:
 # If you are not using Google Analytics, please change 'google-ID' to an empty string
 google-ID: 'UA-112060364-2'
 
-url: 'index.md'
 menu:
 - {name: 'About', url: 'about'}
 - {name: 'Projects', url: 'projects'}
