@@ -3,7 +3,7 @@ layout: home
 title: Home
 ---
 <p style="float: right; margin: 5px 0 10px 10px;">
-    <img src="/assets/img/self-cropped.png" width="280" alt="Me and Biscuit photo" style="border-radius: 0px;">
+    <img src="/assets/img/profile_pic.png" width="280" style="border-radius: 0px;">
 </p>
 <p>
 Welcome! My name is Bolton.
