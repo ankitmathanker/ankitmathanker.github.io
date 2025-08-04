@@ -4,16 +4,4 @@ title: About
 permalink: /about
 ---
 
-<!-- Millennial is a minimalist Jekyll theme. The purpose of this theme is to provide a simple, clean, content-focused publishing platform for your publication site or blog. You can find everything you need to get sta
-
---- -->
-<!-- layout: home
-title: Home
---- -->
-<p style="float: right; margin: 5px 0 10px 10px;">
-    <img src="/assets/img/profile_pic.png" width="280" alt="Profile_pic" style="border-radius: 0px;">
-</p>
-<p>
-I am a Ph.D. Candidate working with
-<a href="https://cheresearch.engin.umich.edu/goldsmith/" target="_blank">Dr. Bryan Goldsmith</a>
-at the University of Michigan.
+Millennial is a minimalist Jekyll theme. The purpose of this theme is to provide a simple, clean, content-focused publishing platform for your publication site or blog. You can find everything you need to get started under documentation. For more information on how to install and use this theme, check out [the documentation]({{ site.github.url }}{% post_url 2016-10-10-getting-started %}).
