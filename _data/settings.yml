@@ -7,7 +7,7 @@ disqus:
 google-ID: 'UA-112060364-2'
 
 menu:
-#- {name: 'About', url: 'about'}
+- {name: 'About', url: 'about'}
 - {name: 'Projects', url: 'projects'}
 - {name: 'Learning Resources', url: 'resources'}
 
