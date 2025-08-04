@@ -6,9 +6,7 @@ title: Home
     <img src="/assets/img/profile_pic.jpg" width="280" style="border-radius: 0px;">
 </p>
 <p>
-Welcome! My name is Bolton.
-I am a postdoctoral fellow
-working with
+I am a PhD. Candidate working in the lab of  
 <a href="https://cheresearch.engin.umich.edu/goldsmith/" target="_blank">Dr. Bryan Goldsmith</a>
 at the University of Michigan.
 </p>
