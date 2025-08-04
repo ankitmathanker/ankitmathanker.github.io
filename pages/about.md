@@ -1,7 +1,15 @@
 ---
-layout: home
-title: Home
+layout: page
+title: About
+permalink: /about
 ---
+
+<!-- Millennial is a minimalist Jekyll theme. The purpose of this theme is to provide a simple, clean, content-focused publishing platform for your publication site or blog. You can find everything you need to get sta
+
+--- -->
+<!-- layout: home
+title: Home
+--- -->
 <p style="float: right; margin: 5px 0 10px 10px;">
     <img src="/assets/img/profile_pic.png" width="280" alt="Profile_pic" style="border-radius: 0px;">
 </p>
