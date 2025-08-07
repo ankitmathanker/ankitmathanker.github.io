@@ -1,81 +1,18 @@
 # Site Build Settings
 
 # jekyll-paginate configuration
-# paginate:            5
+paginate:            5
 
 # Build settings
-# markdown:            kramdown
-# highlighter:         rouge
-# permalink:           /:title
-# plugins:             [jekyll-paginate, jekyll-sitemap, jekyll-feed, jekyll-seo-tag]
+markdown:            kramdown
+highlighter:         rouge
+permalink:           /:title
+plugins:             [jekyll-paginate, jekyll-sitemap, jekyll-feed, jekyll-seo-tag]
 
 # Customise atom feed settings (this is where Jekyll-Feed gets configuration information)
-# title:		           "Ankit Mathanker"
-# author:              "Ankit Mathanker"
+title:		           "Ankit Mathanker"
+author:              "Ankit Mathanker"
 
 # RSS 2.0 can be used instead of Atom by uncommenting following two lines
-#feed:
-#  path: rss-feed.xml
-
-
-# Site Configuration (Improved)
-
-# ================
-# Core Settings
-# ================
-title: "Ankit Mathanker"
-description: "Your compelling site description here"  # Added for SEO & social sharing
-url: "https://yourdomain.com"                       # Add your production URL
-baseurl: ""                                        # For project sites (e.g., "/blog")
-
-# ================
-# Build Settings
-# ================
-markdown: kramdown
-highlighter: rouge
-permalink: /:title/                                # Added trailing slash (better for SEO)
-timezone: Asia/Kolkata                             # Set your timezone for proper dating
-
-# ================
-# Pagination
-# ================
-paginate: 5
-paginate_path: "/blog/page:num"                   # Organize pagination in /blog subdir
-
-# ================
-# Plugins
-# ================
-plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-feed
-  - jekyll-seo-tag                                 # Requires _includes/head.html setup
-
-# ================
-# Feed Settings
-# ================
 feed:
-  path: atom.xml                                   # Explicit feed location
-  author: "Ankit Mathanker"
-  categories: true                                 # Include post categories
-  excerpt: true                                    # Include excerpts in feed
-
-# ================
-# SEO Optimization
-# ================
-seo:
-  title: true                                      # Use site title in meta
-  description: true                                # Use site description in meta
-  image: "/assets/default-social.jpg"              # Default social sharing image
-
-# ================
-# Defaults (Optional but recommended)
-# ================
-defaults:
-  - scope:
-      path: ""
-    values:
-      layout: "default"
-      image: "/assets/default-social.jpg"          # Fallback social image
-      author: "Ankit Mathanker"
-      show_related: true                           # Example custom setting
+ path: rss-feed.xml
