@@ -25,6 +25,18 @@
       MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
     };
   </script>
+  
+  <!--   To add a toggle for light theme -->
+  <!-- _includes/head.html -->
+  <script>
+  // Check saved preference or system default
+    const storedTheme = localStorage.getItem('theme') || 
+      (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  
+  // Apply theme
+    document.documentElement.setAttribute('data-theme', storedTheme);
+  </script>
+  
   <!-- Google Analytics -->
   {% include google-analytics.html %}
   <!-- Use Jekyll SEO plugin -->
