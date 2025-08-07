@@ -41,7 +41,14 @@
   if (document.documentElement.getAttribute('data-theme') === 'dark') {
     themeIcon.textContent = '☀️';
   }
-
+// Add loading class initially
+document.documentElement.classList.add('is-loading');
+// After page loads, remove loading class
+  window.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+      document.documentElement.classList.remove('is-loading');
+    }, 100);
+  });
   toggleButton.addEventListener('click', () => {
     const currentTheme = document.documentElement.getAttribute('data-theme');
     const newTheme = currentTheme === 'light' ? 'dark' : 'light';
@@ -50,6 +57,10 @@
     localStorage.setItem('theme', newTheme);
     
     themeIcon.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+    // Re-enable transitions after a brief pause
+    setTimeout(() => {
+      document.documentElement.style.transition = '';
+    }, 50);
   });
 </script>
   
