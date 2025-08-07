@@ -9,12 +9,14 @@
 }
 .container a {
   text-decoration: underline;
+  color: var(--link-color); // Added
 }
 .content-wrapper {
   padding-top: $header-thickness+10px;
   margin: auto;
   display: block;
   width: $container-width - 20px;
+  color: var(--text-color); // Added
 }
 .content-wrapper h1 {
   margin: 20px 0px 5px;
