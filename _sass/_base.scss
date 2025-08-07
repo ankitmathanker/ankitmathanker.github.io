@@ -40,6 +40,8 @@ h4, h5, h6 {
 /* Body */
 body {
   font-family: $base-font-family;
+  color: var(--text-color); // Added
+  background-color: var(--bg-color); // Added
 }
 body img {
   align: middle;
@@ -88,7 +90,7 @@ dd {
 */
 
 a {
-  color: $brand-color;
+  color: var(--link-color); // Changed
   text-decoration: none;
 }
 
@@ -99,8 +101,8 @@ a {
 blockquote {
   margin: 10px 20px 10px;
   padding: 0px 15px;
-  border-left: 0.25em solid #ccc;
-  color: #999;
+  border-left: 0.25em solid var(--border-color); // Changed
+  color: var(--text-secondary); // Changed
   line-height: 1.5;
 }
 
@@ -114,9 +116,13 @@ table {
 }
 
 table, th, td {
-  border: 1px solid black;
+  border: 1px solid var(--border-color); // Changed
+  background-color: var(--header-bg); // Added
 }
 th, td {
   padding: 15px;
   text-align: left;
+  color: var(--text-color); // Added
 }
+
+
