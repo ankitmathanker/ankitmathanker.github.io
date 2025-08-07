@@ -41,4 +41,5 @@ header {
   position: absolute;
   right: 1rem;
   top: 1rem;
+  z-index: 101; /*Ensure it's above header */
 }
