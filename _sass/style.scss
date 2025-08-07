@@ -1,0 +1,33 @@
+// assets/css/style.scss
+:root {
+  // Light theme
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --link-color: #1a73e8;
+  --header-bg: #f8f9fa;
+  --border-color: #eaeaea;
+}
+
+[data-theme="dark"] {
+  // Dark theme
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --link-color: #8ab4f8;
+  --header-bg: #1e1e1e;
+  --border-color: #444;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+a {
+  color: var(--link-color);
+}
+
+header {
+  background-color: var(--header-bg);
+  border-bottom: 1px solid var(--border-color);
+}
