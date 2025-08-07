@@ -27,4 +27,30 @@
       </a>
     </div>
   </div>
+
+  <!-- _includes/header.html -->
+<button id="theme-toggle" aria-label="Toggle theme">
+  <span id="theme-icon">🌙</span>
+</button>
+
+<script>
+  const toggleButton = document.getElementById('theme-toggle');
+  const themeIcon = document.getElementById('theme-icon');
+  
+  // Set initial icon
+  if (document.documentElement.getAttribute('data-theme') === 'dark') {
+    themeIcon.textContent = '☀️';
+  }
+
+  toggleButton.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    
+    themeIcon.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+  });
+</script>
+  
 </header>
