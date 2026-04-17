@@ -1,0 +1,68 @@
+# Syncs generated README.md to https://github.com/ankitmathanker/ankitmathanker
+#
+# Setup (one-time on GitHub):
+# 1. Create a public repo named ankitmathanker/ankitmathanker if it does not exist (any initial README is fine).
+# 2. Create a fine-grained Personal Access Token with Contents: Read and write on ankitmathanker/ankitmathanker only.
+# 3. In THIS repo (ankitmathanker.github.io): Settings → Secrets and variables → Actions → New repository secret:
+#    Name: PROFILE_REPO_TOKEN
+#    Value: <the PAT>
+#
+# The workflow runs when profile.yaml, the generator, or this file changes on main, or when triggered manually.
+
+name: Sync profile README
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "profile.yaml"
+      - "scripts/generate_profile_readme.py"
+      - "requirements-generate.txt"
+      - ".github/workflows/sync-profile-readme.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout website repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install PyYAML
+        run: python -m pip install -r requirements-generate.txt
+
+      - name: Generate README.md
+        run: python scripts/generate_profile_readme.py --output profile_readme.md
+
+      - name: Checkout profile repository
+        uses: actions/checkout@v4
+        with:
+          repository: ankitmathanker/ankitmathanker
+          path: profile-repo
+          token: ${{ secrets.PROFILE_REPO_TOKEN }}
+
+      - name: Commit and push if changed
+        env:
+          PROFILE_REPO_TOKEN: ${{ secrets.PROFILE_REPO_TOKEN }}
+        run: |
+          set -euo pipefail
+          cp profile_readme.md profile-repo/README.md
+          cd profile-repo
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet HEAD -- README.md; then
+            echo "No changes to README.md"
+            exit 0
+          fi
+          git add README.md
+          git commit -m "chore: sync profile README from ankitmathanker.github.io"
+          git remote set-url origin "https://x-access-token:${PROFILE_REPO_TOKEN}@github.com/ankitmathanker/ankitmathanker.git"
+          git push origin HEAD:main

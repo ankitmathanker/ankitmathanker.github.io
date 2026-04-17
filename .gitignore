@@ -1,2 +1,8 @@
 .DS_Store
 Thumbs.db
+
+# Local output from scripts/generate_profile_readme.py (CI writes to profile repo only)
+profile_readme.md
+
+__pycache__/
+*.py[cod]
