@@ -1,0 +1,66 @@
+# Source of truth for the GitHub profile README (scripts/generate_profile_readme.py).
+# When you change your public bio or links, update this file and push to main;
+# the sync workflow updates ankitmathanker/ankitmathanker. Keep index.html in sync manually.
+
+site:
+  base_url: "https://ankitmathanker.github.io"
+
+name: "Ankit Mathanker"
+title: "PhD Candidate · Chemical Engineering"
+affiliation: "University of Michigan, Ann Arbor"
+tagline: "Computational Catalysis · ML Potentials · Agentic AI"
+
+# Shown at top of README; use absolute URL so it renders on github.com
+profile_image_url: "https://ankitmathanker.github.io/img/photo-real.png"
+
+about_lead: "Interfacial electrochemistry, multiscale modeling, and scientific machine learning for materials and catalysis."
+
+about_paragraphs:
+  - "I am a PhD candidate in Chemical Engineering and Scientific Computing at the University of Michigan. I focus on atomistic modeling for materials science and catalysis, combining advanced computational methods to understand and predict complex interfacial phenomena. My work integrates density functional theory (DFT), ab initio molecular dynamics (AIMD), classical molecular dynamics, machine-learning interatomic potentials, and emerging agentic AI and physics-informed ML architectures. My goal is to improve predictive accuracy, enable materials discovery, and provide mechanistic explanations for experimental observations."
+  - "My doctoral research centers on the electrolyte–electrode interface, investigating how electrolyte composition and co-reactants influence adsorption, interfacial structure, and reaction mechanisms in electrochemical systems. I develop and benchmark MLIP models using MACE, DeepMD, and GRACE architectures to study water adsorption isotherms on different metals, and I run large-scale molecular dynamics simulations that couple DFT with machine-learning acceleration. I also integrate these approaches with analytical models to connect computation with experiment. I am also interested in agentic AI workflows for autonomous discovery in quantum chemistry, combining multi-agent planning with DFT-based mechanistic modeling and developing goal-evolving agents for scientific discovery."
+  - "I am motivated by bridging cutting-edge computational science with sustainable energy challenges. Through interdisciplinary collaboration, I aim to contribute to impactful research while promoting inclusivity, innovation, and environmental sustainability."
+
+research_lead: "Atomistic modeling, electrocatalysis, and AI-driven discovery."
+
+research_areas:
+  - title: "Electrocatalytic Hydrogenation"
+    description: "Effect of electrode potential, electrolyte species, and co-reactants on electrocatalytic hydrogenation of organics using DFT and AIMD."
+    tags: ["VASP", "JDFTx", "ASE"]
+  - title: "Agentic AI for Quantum Chemistry"
+    description: "Multi-agent LLM workflows for autonomous transition-state discovery, combining planning with DFT-based mechanistic modeling."
+    tags: ["OpenAI SDK", "Python"]
+  - title: "ML Interatomic Potentials"
+    description: "Estimating potential-dependent physicochemical properties at metal–electrolyte interfaces using MACE architecture at Lawrence Livermore National Lab."
+    tags: ["MACE", "Interfaces"]
+  - title: "Ion Effects on Catalysis"
+    description: "Role of aqueous ions on adsorption of aromatic organics on Ag surfaces and synergistic effects in organic mixtures."
+    tags: ["Adsorption", "Silver"]
+  - title: "Hydrothermal Liquefaction"
+    description: "Conversion of lignocellulosic biomass and agricultural residues into bio-oil at the University of Alberta."
+    tags: ["Biomass", "Bio-oil"]
+  - title: "High-Throughput Simulation"
+    description: "Scalable HPC pipelines for DFT and MD workflows, Slurm/PBS orchestration, and GPU-accelerated computing."
+    tags: ["Slurm", "PBS", "CUDA"]
+
+stats:
+  publications: 9
+  countries: 3
+  awards: "8+"
+
+education:
+  - degree: "PhD, Chemical Engineering & Scientific Computing"
+    meta: "University of Michigan · 2021–Present"
+  - degree: "MSc, Chemical Engineering"
+    meta: "University of Alberta, Canada · 2018–2020"
+  - degree: "BTech, Chemical Engineering"
+    meta: "IIT (ISM) Dhanbad, India · 2013–2017"
+
+links:
+  website: "https://ankitmathanker.github.io/"
+  cv: "https://ankitmathanker.github.io/assets/CV_AnkitMathanker.pdf"
+  email: "ankitma@umich.edu"
+  scholar: "https://scholar.google.com/citations?user=1PwEl2AAAAAJ&hl=en"
+  github: "https://github.com/ankitmathanker"
+  linkedin: ""
+
+contact_lead: "Open to collaborations and research discussions."
