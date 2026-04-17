@@ -13,7 +13,7 @@
   // ---------------------------------------------------------------------------
   // Config — edit photo filenames here if you change assets
   // ---------------------------------------------------------------------------
-  const PHOTO_PATHS = ["img/photo-real.jpg", "img/photo-ghibli.jpg"];
+  const PHOTO_PATHS = ["img/photo-real.png", "img/photo-ghibli.png"];
 
   // Particle network tuning (performance-friendly defaults)
   const PARTICLE_COUNT_BASE = 55;

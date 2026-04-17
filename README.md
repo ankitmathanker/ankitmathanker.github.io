@@ -17,11 +17,11 @@ Place these files in `img/`:
 
 | File | Purpose |
 |------|---------|
-| `photo-real.jpg` | Default profile photo (hero) |
-| `photo-ghibli.jpg` | Alternate photo (use the **Toggle photo** button) |
-| `simulation.jpg` | Full-width simulation showcase |
+| `photo-real.png` | Default profile photo (hero) |
+| `photo-ghibli.png` | Alternate photo (use the **Toggle photo** button) |
+| `simulation.png` | Full-width simulation showcase |
 
-If you rename files, update the `<img>` `src` in `index.html` and the `PHOTO_PATHS` array at the top of `js/main.js`.
+If you rename files or switch to JPEG, update the `<img>` `src` in `index.html` and the `PHOTO_PATHS` array at the top of `js/main.js`.
 
 ## Social links
 
