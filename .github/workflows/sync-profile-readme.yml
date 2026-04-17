@@ -31,6 +31,14 @@ jobs:
       - name: Checkout website repository
         uses: actions/checkout@v4
 
+      # actions/checkout requires a non-empty token for another repo; missing secret shows as "Input required and not supplied: token"
+      - name: Require PROFILE_REPO_TOKEN
+        run: |
+          if [ -z "${{ secrets.PROFILE_REPO_TOKEN }}" ]; then
+            echo "::error::PROFILE_REPO_TOKEN is not set. In ankitmathanker.github.io: Settings → Secrets and variables → Actions → New repository secret. Name: PROFILE_REPO_TOKEN. Value: a fine-grained PAT with Contents: Read and write on repo ankitmathanker/ankitmathanker only. Then re-run this workflow."
+            exit 1
+          fi
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
