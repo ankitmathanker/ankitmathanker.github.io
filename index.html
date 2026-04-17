@@ -1,4 +1,405 @@
----
-layout: home
-title: Home
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ankit Mathanker — PhD Candidate in Chemical Engineering & Scientific Computing, University of Michigan. Computational catalysis, ML interatomic potentials, agentic AI for chemistry.">
+  <title>Ankit Mathanker | PhD Candidate · Chemical Engineering & Scientific Computing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Particle background (canvas drawn by js/main.js) -->
+  <canvas id="particle-canvas" class="particle-canvas" aria-hidden="true"></canvas>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary">
+      <a href="#hero" class="nav__logo" aria-label="Home — Ankit Mathanker">AM</a>
+      <button type="button" class="nav__toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu">
+        <span class="nav__toggle-bar" aria-hidden="true"></span>
+        <span class="nav__toggle-bar" aria-hidden="true"></span>
+        <span class="nav__toggle-bar" aria-hidden="true"></span>
+      </button>
+      <ul class="nav__menu" id="nav-menu">
+        <li><a href="#about">About</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#awards">Awards</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <!-- Hero -->
+    <section id="hero" class="hero section">
+      <div class="hero__grid">
+        <div class="hero__copy">
+          <p class="hero__eyebrow">Computational Catalysis · ML Potentials · Agentic AI</p>
+          <h1 class="hero__name gradient-text">Ankit Mathanker</h1>
+          <p class="hero__subtitle">PhD Candidate · Chemical Engineering</p>
+          <p class="hero__affil">University of Michigan, Ann Arbor · GPA 4.0/4.0</p>
+          <div class="hero__actions">
+            <a href="#research" class="btn btn--primary">View Research</a>
+            <a href="#contact" class="btn btn--ghost">Get In Touch</a>
+          </div>
+        </div>
+        <div class="hero__visual">
+          <div class="hero__photo-wrap">
+            <div class="hero__photo-ring" aria-hidden="true"></div>
+            <!-- Photo paths: edit in js/main.js (PHOTO_PATHS) if filenames change -->
+            <img
+              id="profile-photo"
+              class="hero__photo"
+              src="img/photo-real.jpg"
+              alt="Portrait of Ankit Mathanker"
+              width="280"
+              height="280"
+              loading="eager"
+            >
+          </div>
+          <button type="button" class="photo-toggle" id="photo-toggle" aria-label="Switch profile photo style">
+            <span class="photo-toggle__icon" aria-hidden="true">↻</span>
+            <span class="photo-toggle__text">Toggle photo</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section section--about">
+      <div class="section__head">
+        <h2 class="section__title gradient-text">About</h2>
+        <p class="section__lead">Research at the intersection of simulation, kinetics, and machine learning.</p>
+      </div>
+      <div class="about__grid">
+        <div class="about__bio glass-card">
+          <p>PhD Candidate in Chemical Engineering and Scientific Computing at the University of Michigan. Research sits at the intersection of atomistic simulation, reaction kinetics, and machine learning for catalysis and materials science.</p>
+          <p>Work spans DFT, AIMD, ML interatomic potentials (MACE), and agentic AI workflows for autonomous transition-state discovery.</p>
+          <p>Previously interned at Lawrence Livermore National Laboratory and researched biomass liquefaction at the University of Alberta.</p>
+        </div>
+        <div class="about__aside">
+          <div class="stat-grid">
+            <div class="stat-card glass-card">
+              <span class="stat-card__value">9</span>
+              <span class="stat-card__label">Publications</span>
+            </div>
+            <div class="stat-card glass-card">
+              <span class="stat-card__value">4.0</span>
+              <span class="stat-card__label">GPA (PhD)</span>
+            </div>
+            <div class="stat-card glass-card">
+              <span class="stat-card__value">3</span>
+              <span class="stat-card__label">Countries</span>
+            </div>
+            <div class="stat-card glass-card">
+              <span class="stat-card__value">8+</span>
+              <span class="stat-card__label">Awards</span>
+            </div>
+          </div>
+          <div class="education-card glass-card">
+            <h3 class="education-card__title">Education</h3>
+            <ul class="timeline">
+              <li>
+                <span class="timeline__degree">PhD, Chemical Engineering &amp; Scientific Computing</span>
+                <span class="timeline__meta">University of Michigan · 2021–Present · GPA 4.0/4.0</span>
+              </li>
+              <li>
+                <span class="timeline__degree">MSc, Chemical Engineering</span>
+                <span class="timeline__meta">University of Alberta, Canada · 2018–2020 · GPA 3.8/4.0</span>
+              </li>
+              <li>
+                <span class="timeline__degree">BTech, Chemical Engineering</span>
+                <span class="timeline__meta">IIT (ISM) Dhanbad, India · 2013–2017 · GPA 8.9/10.0</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Research -->
+    <section id="research" class="section">
+      <div class="section__head">
+        <h2 class="section__title gradient-text">Research</h2>
+        <p class="section__lead">Atomistic modeling, electrocatalysis, and AI-driven discovery.</p>
+      </div>
+      <div class="research-grid">
+        <article class="research-card glass-card">
+          <div class="research-card__icon" aria-hidden="true">⚡</div>
+          <h3 class="research-card__title">Electrocatalytic Hydrogenation</h3>
+          <p class="research-card__desc">Effect of electrode potential, electrolyte species, and co-reactants on electrocatalytic hydrogenation of organics using DFT and AIMD.</p>
+          <div class="tag-row">
+            <span class="tag">VASP</span><span class="tag">JDFTx</span><span class="tag">ASE</span>
+          </div>
+        </article>
+        <article class="research-card glass-card">
+          <div class="research-card__icon" aria-hidden="true">🤖</div>
+          <h3 class="research-card__title">Agentic AI for Quantum Chemistry</h3>
+          <p class="research-card__desc">Multi-agent LLM workflows for autonomous transition-state discovery, combining planning with DFT-based mechanistic modeling.</p>
+          <div class="tag-row">
+            <span class="tag">OpenAI SDK</span><span class="tag">Python</span>
+          </div>
+        </article>
+        <article class="research-card glass-card">
+          <div class="research-card__icon" aria-hidden="true">🧬</div>
+          <h3 class="research-card__title">ML Interatomic Potentials</h3>
+          <p class="research-card__desc">Estimating potential-dependent physicochemical properties at metal–electrolyte interfaces using MACE architecture at Lawrence Livermore National Lab.</p>
+          <div class="tag-row">
+            <span class="tag">MACE</span><span class="tag">Interfaces</span>
+          </div>
+        </article>
+        <article class="research-card glass-card">
+          <div class="research-card__icon" aria-hidden="true">💧</div>
+          <h3 class="research-card__title">Ion Effects on Catalysis</h3>
+          <p class="research-card__desc">Role of aqueous ions on adsorption of aromatic organics on Ag surfaces and synergistic effects in organic mixtures.</p>
+          <div class="tag-row">
+            <span class="tag">Adsorption</span><span class="tag">Silver</span>
+          </div>
+        </article>
+        <article class="research-card glass-card">
+          <div class="research-card__icon" aria-hidden="true">🌿</div>
+          <h3 class="research-card__title">Hydrothermal Liquefaction</h3>
+          <p class="research-card__desc">Conversion of lignocellulosic biomass and agricultural residues into bio-oil at the University of Alberta.</p>
+          <div class="tag-row">
+            <span class="tag">Biomass</span><span class="tag">Bio-oil</span>
+          </div>
+        </article>
+        <article class="research-card glass-card">
+          <div class="research-card__icon" aria-hidden="true">📊</div>
+          <h3 class="research-card__title">High-Throughput Simulation</h3>
+          <p class="research-card__desc">Scalable HPC pipelines for DFT and MD workflows, Slurm/PBS orchestration, and GPU-accelerated computing.</p>
+          <div class="tag-row">
+            <span class="tag">Slurm</span><span class="tag">PBS</span><span class="tag">CUDA</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Simulation showcase -->
+    <section id="showcase" class="showcase" aria-labelledby="showcase-heading">
+      <div class="showcase__media">
+        <img
+          src="img/simulation.jpg"
+          alt=""
+          class="showcase__img"
+          width="1600"
+          height="900"
+          loading="lazy"
+        >
+        <div class="showcase__overlay"></div>
+        <div class="showcase__caption-wrap">
+          <h2 id="showcase-heading" class="showcase__title">Simulation Showcase</h2>
+          <p class="showcase__caption">
+            Molecular Dynamics Simulation — Metal–electrolyte interface showing water molecules, co-ions, and adsorbed organics at a platinum surface.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Publications -->
+    <section id="publications" class="section">
+      <div class="section__head">
+        <h2 class="section__title gradient-text">Publications</h2>
+        <p class="section__lead">Peer-reviewed articles and preprints (newest first).</p>
+      </div>
+      <ol class="pub-list">
+        <li class="pub-item glass-card">
+          <span class="pub-item__num">1</span>
+          <div class="pub-item__body">
+            <h3 class="pub-item__title">Estimating potential-dependent physicochemical properties at metal–electrolyte interfaces using ML interatomic potentials.</h3>
+            <p class="pub-item__meta"><em>ACS Electrochemistry</em>, in press 2025–2026.</p>
+            <p class="pub-item__authors">Mathanker, A. et al.</p>
+            <span class="badge badge--press">In Press</span>
+          </div>
+        </li>
+        <li class="pub-item glass-card">
+          <span class="pub-item__num">2</span>
+          <div class="pub-item__body">
+            <h3 class="pub-item__title">Benchmarking short-range ML potentials for atomistic simulations of metal/electrolyte interfaces.</h3>
+            <p class="pub-item__meta">arXiv:2602.22931 (<em>J. Chem. Phys.</em>, in review).</p>
+            <p class="pub-item__authors">de Kam, L.B.T.; Zhu, J.X.; Mathanker, A. et al.</p>
+            <span class="badge badge--review">In Review</span>
+          </div>
+        </li>
+        <li class="pub-item glass-card">
+          <span class="pub-item__num">3</span>
+          <div class="pub-item__body">
+            <h3 class="pub-item__title">Effect of ions on the aqueous-phase adsorption of small aromatic organics on silver.</h3>
+            <p class="pub-item__meta"><em>J. Phys. Chem. C</em> 2025, 129, 29, 13433–13444.</p>
+            <p class="pub-item__authors">Mathanker, A. et al.</p>
+            <span class="badge badge--published">Published</span>
+          </div>
+        </li>
+        <li class="pub-item glass-card">
+          <span class="pub-item__num">4</span>
+          <div class="pub-item__body">
+            <h3 class="pub-item__title">Synergistic effects in organic mixtures for enhanced catalytic hydrogenation and hydrodeoxygenation.</h3>
+            <p class="pub-item__meta"><em>Chem Catalysis</em> 2024, 4, 101135.</p>
+            <p class="pub-item__authors">Mathanker, A. et al.</p>
+            <span class="badge badge--published">Published</span>
+          </div>
+        </li>
+        <li class="pub-item glass-card">
+          <span class="pub-item__num">5</span>
+          <div class="pub-item__body">
+            <h3 class="pub-item__title">Effects of ions on electrocatalytic hydrogenation and oxidation of organics in aqueous phase.</h3>
+            <p class="pub-item__meta"><em>Curr. Opin. Electrochem.</em> 40, 101347 (2023).</p>
+            <p class="pub-item__authors">Mathanker, A. et al.</p>
+            <span class="badge badge--published">Published</span>
+          </div>
+        </li>
+        <li class="pub-item glass-card">
+          <span class="pub-item__num">6</span>
+          <div class="pub-item__body">
+            <h3 class="pub-item__title">Synergistic effect of water and co-solvents on hydrothermal liquefaction of agricultural biomass.</h3>
+            <p class="pub-item__meta"><em>Int. J. Energy Clean Env.</em> 2022.</p>
+            <p class="pub-item__authors">Das, S.; Mathanker, A. et al.</p>
+            <span class="badge badge--published">Published</span>
+          </div>
+        </li>
+        <li class="pub-item glass-card">
+          <span class="pub-item__num">7</span>
+          <div class="pub-item__body">
+            <h3 class="pub-item__title">A review on hydrothermal liquefaction of biomass for biofuels production.</h3>
+            <p class="pub-item__meta"><em>Energies</em> 2021, 14, 4916.</p>
+            <p class="pub-item__authors">Mathanker, A. et al.</p>
+            <span class="badge badge--published">Published</span>
+          </div>
+        </li>
+        <li class="pub-item glass-card">
+          <span class="pub-item__num">8</span>
+          <div class="pub-item__body">
+            <h3 class="pub-item__title">Hydrothermal liquefaction of lignocellulosic biomass feedstock to produce biofuels: Parameter study and products characterization.</h3>
+            <p class="pub-item__meta"><em>Fuel</em> 2020, 271, 117534.</p>
+            <p class="pub-item__authors">Mathanker, A. et al.</p>
+            <span class="badge badge--published">Published</span>
+          </div>
+        </li>
+        <li class="pub-item glass-card">
+          <span class="pub-item__num">9</span>
+          <div class="pub-item__body">
+            <h3 class="pub-item__title">Hydrothermal liquefaction of lignocellulosic biomass to produce biofuels.</h3>
+            <p class="pub-item__meta">Thesis 2020.</p>
+            <p class="pub-item__authors">Mathanker, A.</p>
+            <span class="badge badge--published">Published</span>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section section--skills">
+      <div class="section__head">
+        <h2 class="section__title gradient-text">Skills</h2>
+        <p class="section__lead">Tools and methods across modeling, ML, and computing.</p>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-card glass-card">
+          <h3 class="skill-card__title">Atomistic Modeling</h3>
+          <div class="tag-row tag-row--wrap">
+            <span class="tag">ASE</span><span class="tag">Pymatgen</span><span class="tag">VASP (DFT/AIMD)</span><span class="tag">JDFTx</span><span class="tag">GROMACS</span><span class="tag">LAMMPS</span><span class="tag">NEB</span><span class="tag">Vibrational analysis</span><span class="tag">Microkinetic modeling</span>
+          </div>
+        </div>
+        <div class="skill-card glass-card">
+          <h3 class="skill-card__title">Scientific ML &amp; AI</h3>
+          <div class="tag-row tag-row--wrap">
+            <span class="tag">PyTorch</span><span class="tag">MACE</span><span class="tag">DeepMD</span><span class="tag">scikit-learn</span><span class="tag">OpenAI SDK</span><span class="tag">LLM multi-agent systems</span><span class="tag">Uncertainty quantification</span>
+          </div>
+        </div>
+        <div class="skill-card glass-card">
+          <h3 class="skill-card__title">Python &amp; Data</h3>
+          <div class="tag-row tag-row--wrap">
+            <span class="tag">NumPy</span><span class="tag">Pandas</span><span class="tag">SciPy</span><span class="tag">Matplotlib</span><span class="tag">Jupyter</span>
+          </div>
+        </div>
+        <div class="skill-card glass-card">
+          <h3 class="skill-card__title">HPC &amp; Infrastructure</h3>
+          <div class="tag-row tag-row--wrap">
+            <span class="tag">Slurm</span><span class="tag">PBS</span><span class="tag">CUDA/GPU</span><span class="tag">High-throughput pipelines</span><span class="tag">Bash</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Awards -->
+    <section id="awards" class="section">
+      <div class="section__head">
+        <h2 class="section__title gradient-text">Awards</h2>
+        <p class="section__lead">Recognition for research, travel, and innovation.</p>
+      </div>
+      <div class="awards-grid">
+        <article class="award-card glass-card">
+          <div class="award-card__icon" aria-hidden="true">🏆</div>
+          <h3 class="award-card__title">LLM Hackathon – Visionary Award (RedoxFlow)</h3>
+          <p class="award-card__desc">Top 25 teams globally; agentic AI for materials science.</p>
+        </article>
+        <article class="award-card glass-card">
+          <div class="award-card__icon" aria-hidden="true">✈️</div>
+          <h3 class="award-card__title">CRE Division Travel Award – AIChE</h3>
+          <p class="award-card__desc">For exceptional advancements in catalysis.</p>
+        </article>
+        <article class="award-card glass-card">
+          <div class="award-card__icon" aria-hidden="true">🎓</div>
+          <h3 class="award-card__title">Rackham Travel Award</h3>
+          <p class="award-card__desc">University of Michigan (2022, 2023, 2024).</p>
+        </article>
+        <article class="award-card glass-card">
+          <div class="award-card__icon" aria-hidden="true">✨</div>
+          <h3 class="award-card__title">Greenhalgh Memorial Scholarship</h3>
+          <p class="award-card__desc">University of Alberta; top 5% incoming cohort.</p>
+        </article>
+        <article class="award-card glass-card">
+          <div class="award-card__icon" aria-hidden="true">🔬</div>
+          <h3 class="award-card__title">Mary Louise Imrie Graduate Award</h3>
+          <p class="award-card__desc">University of Alberta; extraordinary research.</p>
+        </article>
+        <article class="award-card glass-card">
+          <div class="award-card__icon" aria-hidden="true">📜</div>
+          <h3 class="award-card__title">IAS Summer Research Fellowship</h3>
+          <p class="award-card__desc">Indian Academy of Sciences; top 10% applicants.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section section--contact">
+      <div class="contact glass-card">
+        <h2 class="section__title gradient-text">Contact</h2>
+        <p class="contact__lead">Open to collaborations and research discussions.</p>
+        <a class="contact__email" href="mailto:ankitma@umich.edu">
+          <span class="contact__email-icon" aria-hidden="true">✉</span>
+          ankitma@umich.edu
+        </a>
+        <div class="contact__socials">
+          <!-- TODO: add Google Scholar URL -->
+          <a href="#" class="social-btn" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar (add URL)">
+            <svg class="social-btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg>
+            <span>Scholar</span>
+          </a>
+          <!-- TODO: add LinkedIn URL -->
+          <a href="#" class="social-btn" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (add URL)">
+            <svg class="social-btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            <span>LinkedIn</span>
+          </a>
+          <a href="https://github.com/ankitmathanker" class="social-btn" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <svg class="social-btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            <span>GitHub</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Ankit Mathanker · University of Michigan</p>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
