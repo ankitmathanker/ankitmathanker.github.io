@@ -21,49 +21,78 @@
   const LINE_OPACITY = 0.12;
   const NODE_DRIFT = 0.35;
 
-  // ---------------------------------------------------------------------------
-  // Footer year
-  // ---------------------------------------------------------------------------
-  const yearEl = document.getElementById("year");
-  if (yearEl) {
-    yearEl.textContent = String(new Date().getFullYear());
+  function basename(path) {
+    if (!path) return "";
+    var parts = path.split("/");
+    return parts[parts.length - 1] || "";
   }
 
   // ---------------------------------------------------------------------------
   // Profile photo toggle
   // ---------------------------------------------------------------------------
-  const profilePhoto = document.getElementById("profile-photo");
-  const photoToggle = document.getElementById("photo-toggle");
-
   function initPhotoToggle() {
+    var profilePhoto = document.getElementById("profile-photo");
+    var photoToggle = document.getElementById("photo-toggle");
     if (!profilePhoto || !photoToggle) return;
 
-    let index = 0;
-
-    function applyPhoto() {
-      profilePhoto.src = PHOTO_PATHS[index];
+    function currentIndexFromImg() {
+      var pathname = "";
+      try {
+        pathname = new URL(profilePhoto.src || "", window.location.href).pathname;
+      } catch (_) {
+        pathname = "";
+      }
+      var currentFile = basename(pathname);
+      var i;
+      for (i = 0; i < PHOTO_PATHS.length; i++) {
+        if (basename(PHOTO_PATHS[i]) === currentFile) return i;
+      }
+      return 0;
     }
 
-    // Ensure starting index matches current src if you hand-edit HTML
-    const initial = PHOTO_PATHS.indexOf(
-      profilePhoto.getAttribute("src") || PHOTO_PATHS[0]
-    );
-    if (initial >= 0) index = initial;
+    var index = currentIndexFromImg();
 
-    photoToggle.addEventListener("click", function () {
-      index = (index + 1) % PHOTO_PATHS.length;
-      applyPhoto();
-    });
+    function applyPhoto() {
+      profilePhoto.setAttribute("src", PHOTO_PATHS[index]);
+    }
+
+    photoToggle.addEventListener(
+      "click",
+      function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        index = (index + 1) % PHOTO_PATHS.length;
+        applyPhoto();
+      },
+      false
+    );
   }
 
-  initPhotoToggle();
+  // ---------------------------------------------------------------------------
+  // Footer year
+  // ---------------------------------------------------------------------------
+  function initYear() {
+    var yearEl = document.getElementById("year");
+    if (yearEl) {
+      yearEl.textContent = String(new Date().getFullYear());
+    }
+  }
+
+  function initAll() {
+    initYear();
+    initPhotoToggle();
+    initMobileNav();
+    initSmoothScroll();
+    initParticles();
+  }
 
   // ---------------------------------------------------------------------------
   // Mobile navigation
   // ---------------------------------------------------------------------------
-  const nav = document.querySelector(".nav");
-  const navToggle = document.getElementById("nav-toggle");
-  const navMenu = document.getElementById("nav-menu");
+  var nav = document.querySelector(".nav");
+
+  var navToggle = document.getElementById("nav-toggle");
+  var navMenu = document.getElementById("nav-menu");
 
   function setNavOpen(open) {
     if (!nav || !navToggle) return;
@@ -97,8 +126,6 @@
     });
   }
 
-  initMobileNav();
-
   // ---------------------------------------------------------------------------
   // Smooth scroll: enhance anchor clicks (header offset handled via CSS)
   // ---------------------------------------------------------------------------
@@ -115,8 +142,6 @@
       });
     });
   }
-
-  initSmoothScroll();
 
   // ---------------------------------------------------------------------------
   // Canvas particle network
@@ -245,5 +270,9 @@
     requestAnimationFrame(step);
   }
 
-  initParticles();
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initAll);
+  } else {
+    initAll();
+  }
 })();
