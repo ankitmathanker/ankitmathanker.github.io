@@ -894,7 +894,7 @@ main,
   font-weight: 600;
   color: var(--accent-teal);
   text-decoration: none;
-  margin-bottom: 2rem;
+  margin-bottom: 0.75rem;
   transition: color var(--transition), text-shadow var(--transition);
 }
 
@@ -907,6 +907,33 @@ main,
 
 .contact__email-icon {
   font-size: 1.25rem;
+}
+
+.contact__cv {
+  margin: 0 0 1.75rem;
+}
+
+.contact__cv-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color var(--transition), border-color var(--transition);
+}
+
+.contact__cv-link:hover,
+.contact__cv-link:focus-visible {
+  color: var(--accent-purple);
+  border-bottom-color: rgba(167, 139, 250, 0.5);
+  outline: none;
+}
+
+.contact__cv-icon {
+  font-size: 1.1rem;
 }
 
 .contact__socials {

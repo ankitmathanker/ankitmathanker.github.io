@@ -7,9 +7,14 @@ Static academic portfolio for **Ankit Mathanker** (PhD Candidate, Chemical Engin
 - `index.html` — Single-page layout (semantic HTML5)
 - `css/style.css` — All styling (dark theme, glass cards, responsive grid)
 - `js/main.js` — Particle background, mobile nav, photo toggle, smooth scrolling
-- `img/` — Add your images here (see below)
+- `img/` — Profile and simulation images (see below)
+- `assets/CV_AnkitMathanker.pdf` — Curriculum vitae (replace when you update your CV)
 
 No build step, frameworks, or npm — open `index.html` locally or push to GitHub.
+
+## CV
+
+Update the PDF at `assets/CV_AnkitMathanker.pdf` when your CV changes. Links are in the nav (**CV**), hero (**Download CV**), and Contact section.
 
 ## Images to add
 
