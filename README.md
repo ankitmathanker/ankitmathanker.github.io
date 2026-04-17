@@ -30,7 +30,7 @@ If you rename files or switch to JPEG, update the `<img>` `src` in `index.html` 
 
 ## Social links
 
-In `index.html`, search for `TODO: add` — replace placeholder `#` URLs for Google Scholar and LinkedIn. GitHub is already set to `https://github.com/ankitmathanker`.
+In `index.html`, search for `TODO: add` — replace the placeholder LinkedIn URL if needed. Google Scholar and GitHub links are set in the Contact section. Publication titles link to DOIs or arXiv where applicable.
 
 ## Deploy
 
