@@ -29,6 +29,8 @@
  *      numMolecules:  22,     // water molecules
  *      numCations:    9,      // K⁺ ions
  *      numAnions:     7,      // Cl⁻ ions
+ *      numPhenol:     3,      // adsorbed phenol molecules
+ *      numBenzaldehyde: 3,    // adsorbed benzaldehyde molecules
  *      repulseRadius: 90,     // mouse-repulsion radius (px)
  *      repulseForce:  0.65,   // mouse-repulsion strength
  *      showLabels:    true,   // hover atom-type labels
@@ -88,6 +90,8 @@
       numMolecules:  22,
       numCations:    9,
       numAnions:     7,
+      numPhenol:     3,
+      numBenzaldehyde: 3,
       repulseRadius: 90,
       repulseForce:  0.65,
       showLabels:    true,
@@ -117,6 +121,7 @@
     const shockwaves = [];       // click ripples
     let   mols       = [];
     let   ions       = [];
+    let   organics   = [];
     let   hovered    = null;     // { x, y, label, color }
 
     /* ══════════════════════════════════════════════════════════════════════════
@@ -346,6 +351,138 @@
     }
 
     /* ══════════════════════════════════════════════════════════════════════════
+     *  PARTICLES — ORGANIC MOLECULES (phenol, benzaldehyde)
+     * ══════════════════════════════════════════════════════════════════════════ */
+
+    const ORG_R = 13;   // benzene ring radius (px)
+
+    function newOrganic(type) {
+      const surface = sy();
+      return {
+        type: type,
+        x:    Math.random() * W,
+        y:    surface - 20 - Math.random() * 40,
+        vx:   (Math.random() - 0.5) * 0.30,
+        vy:   (Math.random() - 0.5) * 0.10,
+        a:    Math.random() * Math.PI * 2,
+        da:   (Math.random() - 0.5) * 0.006,
+        al:   0.60 + Math.random() * 0.30,
+      };
+    }
+
+    function updateOrganic(org) {
+      const surface = sy();
+
+      /* Gentle Brownian motion, mostly lateral. */
+      org.vx += (Math.random() - 0.5) * 0.05;
+      org.vy += (Math.random() - 0.5) * 0.03;
+
+      /* Soft attraction toward the surface keeps molecules adsorbed. */
+      org.vy += 0.018;
+
+      let [nvx, nvy] = repel(org.x, org.y, org.vx, org.vy);
+      [nvx, nvy] = shockRepel(org.x, org.y, nvx, nvy);
+      org.vx = nvx; org.vy = nvy;
+
+      const sp = Math.sqrt(org.vx * org.vx + org.vy * org.vy);
+      if (sp > 0.85) { org.vx *= 0.85 / sp; org.vy *= 0.85 / sp; }
+
+      org.x += org.vx;
+      org.y += org.vy;
+      org.a += org.da;
+
+      if (org.x < -30)     org.x += W + 60;
+      if (org.x > W + 30)  org.x -= W + 60;
+      if (org.y < surface - 65) { org.vy += 0.04; org.y = surface - 65; }
+      if (org.y > surface - 18) { org.vy = -Math.abs(org.vy) * 0.4; org.y = surface - 18; }
+    }
+
+    function drawBenzeneRing(ox, oy, a, al) {
+      const verts = [];
+      for (let k = 0; k < 6; k++) {
+        verts.push({
+          x: ox + ORG_R * Math.cos(a + k * Math.PI / 3),
+          y: oy + ORG_R * Math.sin(a + k * Math.PI / 3),
+        });
+      }
+
+      cx.strokeStyle = `rgba(120,200,130,${(al * 0.78).toFixed(3)})`;
+      cx.lineWidth   = 1.3;
+      cx.beginPath();
+      for (let k = 0; k < 6; k++) {
+        const v1 = verts[k], v2 = verts[(k + 1) % 6];
+        cx.moveTo(v1.x, v1.y);
+        cx.lineTo(v2.x, v2.y);
+      }
+      cx.stroke();
+
+      cx.beginPath();
+      cx.arc(ox, oy, ORG_R * 0.55, 0, Math.PI * 2);
+      cx.strokeStyle = `rgba(120,200,130,${(al * 0.42).toFixed(3)})`;
+      cx.lineWidth   = 0.9;
+      cx.stroke();
+
+      return verts;
+    }
+
+    function drawOrganic(org) {
+      const { x, y, a, al, type } = org;
+
+      drawBenzeneRing(x, y, a, al);
+
+      const v0x = x + ORG_R * Math.cos(a);
+      const v0y = y + ORG_R * Math.sin(a);
+
+      if (type === 'phenol') {
+        const Ox = v0x + 11 * Math.cos(a);
+        const Oy = v0y + 11 * Math.sin(a);
+
+        cx.strokeStyle = `rgba(200,70,55,${(al * 0.82).toFixed(3)})`;
+        cx.lineWidth   = 1.2;
+        cx.beginPath(); cx.moveTo(v0x, v0y); cx.lineTo(Ox, Oy); cx.stroke();
+
+        cx.beginPath(); cx.arc(Ox, Oy, 3.8, 0, Math.PI * 2);
+        cx.fillStyle = `rgba(205,65,55,${(al * 0.90).toFixed(3)})`; cx.fill();
+
+        const Hx = Ox + 7 * Math.cos(a + Math.PI / 5);
+        const Hy = Oy + 7 * Math.sin(a + Math.PI / 5);
+        cx.strokeStyle = `rgba(185,220,255,${(al * 0.72).toFixed(3)})`;
+        cx.lineWidth   = 1;
+        cx.beginPath(); cx.moveTo(Ox, Oy); cx.lineTo(Hx, Hy); cx.stroke();
+      } else {
+        const Cx = v0x + 10 * Math.cos(a);
+        const Cy = v0y + 10 * Math.sin(a);
+
+        cx.strokeStyle = `rgba(120,200,130,${(al * 0.78).toFixed(3)})`;
+        cx.lineWidth   = 1.2;
+        cx.beginPath(); cx.moveTo(v0x, v0y); cx.lineTo(Cx, Cy); cx.stroke();
+
+        const Ox   = Cx + 11 * Math.cos(a);
+        const Oy   = Cy + 11 * Math.sin(a);
+        const perp = a + Math.PI / 2;
+        const off  = 1.6;
+
+        cx.strokeStyle = `rgba(205,65,55,${(al * 0.85).toFixed(3)})`;
+        cx.lineWidth   = 1.1;
+        cx.beginPath();
+        cx.moveTo(Cx + off * Math.cos(perp), Cy + off * Math.sin(perp));
+        cx.lineTo(Ox + off * Math.cos(perp), Oy + off * Math.sin(perp));
+        cx.moveTo(Cx - off * Math.cos(perp), Cy - off * Math.sin(perp));
+        cx.lineTo(Ox - off * Math.cos(perp), Oy - off * Math.sin(perp));
+        cx.stroke();
+
+        cx.beginPath(); cx.arc(Ox, Oy, 3.8, 0, Math.PI * 2);
+        cx.fillStyle = `rgba(205,65,55,${(al * 0.90).toFixed(3)})`; cx.fill();
+
+        const Hx2 = Cx + 6 * Math.cos(a - Math.PI / 4);
+        const Hy2 = Cy + 6 * Math.sin(a - Math.PI / 4);
+        cx.strokeStyle = `rgba(185,220,255,${(al * 0.60).toFixed(3)})`;
+        cx.lineWidth   = 0.9;
+        cx.beginPath(); cx.moveTo(Cx, Cy); cx.lineTo(Hx2, Hy2); cx.stroke();
+      }
+    }
+
+    /* ══════════════════════════════════════════════════════════════════════════
      *  SHOCKWAVE RIPPLES (click effect)
      * ══════════════════════════════════════════════════════════════════════════ */
 
@@ -541,7 +678,21 @@
         }
       }
 
-      /* 3. Metal surface atoms */
+      /* 3. Organic molecules */
+      for (const org of organics) {
+        const d = Math.sqrt((org.x - mouse.x) ** 2 + (org.y - mouse.y) ** 2);
+        if (d < ORG_R + 8) {
+          hovered = {
+            x: org.x, y: org.y,
+            label: org.type === 'phenol' ? 'Phenol' : 'PhCHO',
+            color: 'rgba(120,210,140,0.96)',
+          };
+          cv.style.cursor = 'crosshair';
+          return;
+        }
+      }
+
+      /* 4. Metal surface atoms */
       const metalName = O.metal || 'Pt';
       const r   = LATTICE_R, hsp = LATTICE_HSP, vsp = LATTICE_VSP;
       const ptLayers = [
@@ -609,10 +760,14 @@
      * ══════════════════════════════════════════════════════════════════════════ */
 
     function initParticles() {
-      mols = Array.from({ length: O.numMolecules }, newMol);
-      ions = [
+      mols     = Array.from({ length: O.numMolecules }, newMol);
+      ions     = [
         ...Array.from({ length: O.numCations }, () => newIon( 1)),
         ...Array.from({ length: O.numAnions  }, () => newIon(-1)),
+      ];
+      organics = [
+        ...Array.from({ length: O.numPhenol       }, () => newOrganic('phenol')),
+        ...Array.from({ length: O.numBenzaldehyde }, () => newOrganic('benzaldehyde')),
       ];
     }
 
@@ -636,6 +791,7 @@
       /* Particles */
       for (const ion of ions)  { updateIon(ion);  drawIon(ion);  }
       for (const mol of mols)  { updateMol(mol);  drawMol(mol);  }
+      for (const org of organics) { updateOrganic(org); drawOrganic(org); }
 
       /* Shockwaves */
       updateShockwaves();
