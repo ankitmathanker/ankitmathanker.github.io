@@ -11,7 +11,12 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <canvas id="bg-canvas" class="background-canvas" aria-hidden="true"></canvas>
+  <canvas
+    id="bg-canvas"
+    class="background-canvas"
+    aria-hidden="true"
+    style="position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;display:block;"
+  ></canvas>
 
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
@@ -471,8 +476,7 @@
       numAnions: 7,
       repulseRadius: 90,
       repulseForce: 0.65,
-      showLabels: true,
-      bgColor: "#0d1117"
+      showLabels: true
     });
   </script>
 </body>
