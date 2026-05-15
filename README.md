@@ -36,6 +36,12 @@ In `index.html`, search for `TODO: add` — replace the placeholder LinkedIn URL
 
 Push to the `main` branch of `github.com/ankitmathanker/ankitmathanker.github.io`. GitHub Pages serves `index.html` from the repository root automatically.
 
+If GitHub Pages does not deploy the latest `main` commit, manually queue a rebuild with GitHub CLI:
+
+```powershell
+gh api -X POST repos/ankitmathanker/ankitmathanker.github.io/pages/builds
+```
+
 ## License
 
 Site content © Ankit Mathanker. Code in this repository may be reused with attribution for personal academic sites.
