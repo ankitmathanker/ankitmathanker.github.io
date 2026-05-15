@@ -4,7 +4,7 @@
    ========================================================================== */
 
 :root {
-  --bg-deep: #060d1a;
+  --bg-deep: #0d1117;
   --bg-elevated: rgba(15, 28, 48, 0.65);
   --accent-teal: #2dd4bf;
   --accent-blue: #38bdf8;
@@ -53,7 +53,7 @@ body {
   font-size: 1rem;
   line-height: 1.6;
   color: var(--text-primary);
-  background: var(--bg-deep);
+  background-color: var(--bg-deep);
   overflow-x: hidden;
 }
 
@@ -61,10 +61,11 @@ body {
 .background-canvas {
   position: fixed;
   inset: 0;
-  z-index: 0;
   width: 100%;
   height: 100%;
+  z-index: 0;
   pointer-events: none;
+  display: block;
 }
 
 /* --- Skip link --- */
@@ -269,6 +270,7 @@ section[id] {
 
 /* --- Layout --- */
 main,
+#main-content,
 .site-footer {
   position: relative;
   z-index: 1;
