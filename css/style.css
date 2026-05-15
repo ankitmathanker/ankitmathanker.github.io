@@ -783,6 +783,11 @@ main,
   transition: transform var(--transition);
 }
 
+.pub-item__thumb--contain {
+  object-fit: contain;
+  background: #fff;
+}
+
 .pub-item__num {
   font-size: 1.25rem;
   font-weight: 700;
