@@ -1,66 +1,198 @@
-# Source of truth for the GitHub profile README (scripts/generate_profile_readme.py).
-# When you change your public bio or links, update this file and push to main;
-# the sync workflow updates ankitmathanker/ankitmathanker. Keep index.html in sync manually.
-
+# Shared content for the website and GitHub profile. Run scripts/generate_site.py
+# and scripts/generate_profile_readme.py after making changes.
 site:
   base_url: "https://ankitmathanker.github.io"
-
+  updated: "October 2026"
 name: "Ankit Mathanker"
-title: "PhD Candidate · Chemical Engineering"
-affiliation: "University of Michigan, Ann Arbor"
-tagline: "Computational Catalysis · ML Potentials · Agentic AI"
-
-# Shown at top of README; use absolute URL so it renders on github.com
-profile_image_url: "https://ankitmathanker.github.io/img/photo-real.png"
-
-about_lead: "Interfacial electrochemistry, multiscale modeling, and scientific machine learning for materials and catalysis."
+title: "Postdoctoral Scholar"
+affiliation: "University of Chicago / Argonne National Laboratory"
+location: "Chicago, Illinois"
+tagline: "Energy materials, electrochemistry, and molecular simulation"
+description: "Ankit Mathanker is a postdoctoral scholar at the University of Chicago / Argonne National Laboratory studying organic battery materials, electrochemical interfaces, and molecular simulation."
+profile_image: "img/photo-real.png"
 
 about_paragraphs:
-  - "I am a PhD candidate in Chemical Engineering and Scientific Computing at the University of Michigan. I focus on atomistic modeling for materials science and catalysis, combining advanced computational methods to understand and predict complex interfacial phenomena. My work integrates density functional theory (DFT), ab initio molecular dynamics (AIMD), classical molecular dynamics, machine-learning interatomic potentials, and emerging agentic AI and physics-informed ML architectures. My goal is to improve predictive accuracy, enable materials discovery, and provide mechanistic explanations for experimental observations."
-  - "My doctoral research centers on the electrolyte–electrode interface, investigating how electrolyte composition and co-reactants influence adsorption, interfacial structure, and reaction mechanisms in electrochemical systems. I develop and benchmark MLIP models using MACE, DeepMD, and GRACE architectures to study water adsorption isotherms on different metals, and I run large-scale molecular dynamics simulations that couple DFT with machine-learning acceleration. I also integrate these approaches with analytical models to connect computation with experiment. I am also interested in agentic AI workflows for autonomous discovery in quantum chemistry, combining multi-agent planning with DFT-based mechanistic modeling and developing goal-evolving agents for scientific discovery."
-  - "I am motivated by bridging cutting-edge computational science with sustainable energy challenges. Through interdisciplinary collaboration, I aim to contribute to impactful research while promoting inclusivity, innovation, and environmental sustainability."
-
-research_lead: "Atomistic modeling, electrocatalysis, and AI-driven discovery."
+  - "I am a postdoctoral scholar at the University of Chicago / Argonne National Laboratory. My current research focuses on covalent organic frameworks as organic cathode materials for lithium-ion batteries, with the aim of improving capacity and stability."
+  - "I completed my Ph.D. in Chemical Engineering and Scientific Computing at the University of Michigan in August 2026. My doctoral work examined how electrode potential and electrolyte composition affect molecular adsorption and electrocatalytic reactions. I use density functional theory, molecular dynamics, and machine learning interatomic potentials to study these systems, and I also develop automated workflows for quantum chemistry."
+  - "Before Michigan, I studied the conversion of lignocellulosic biomass into biofuels at the University of Alberta. Across these projects, I am interested in connecting molecular-scale understanding with the design of materials and processes for energy applications."
 
 research_areas:
-  - title: "Electrocatalytic Hydrogenation"
-    description: "Effect of electrode potential, electrolyte species, and co-reactants on electrocatalytic hydrogenation of organics using DFT and AIMD."
-    tags: ["VASP", "JDFTx", "ASE"]
-  - title: "Agentic AI for Quantum Chemistry"
-    description: "Multi-agent LLM workflows for autonomous transition-state discovery, combining planning with DFT-based mechanistic modeling."
-    tags: ["OpenAI SDK", "Python"]
-  - title: "ML Interatomic Potentials"
-    description: "Estimating potential-dependent physicochemical properties at metal–electrolyte interfaces using MACE architecture at Lawrence Livermore National Lab."
-    tags: ["MACE", "Interfaces"]
-  - title: "Ion Effects on Catalysis"
-    description: "Role of aqueous ions on adsorption of aromatic organics on Ag surfaces and synergistic effects in organic mixtures."
-    tags: ["Adsorption", "Silver"]
-  - title: "Hydrothermal Liquefaction"
-    description: "Conversion of lignocellulosic biomass and agricultural residues into bio-oil at the University of Alberta."
-    tags: ["Biomass", "Bio-oil"]
-  - title: "High-Throughput Simulation"
-    description: "Scalable HPC pipelines for DFT and MD workflows, Slurm/PBS orchestration, and GPU-accelerated computing."
-    tags: ["Slurm", "PBS", "CUDA"]
+  - title: "Organic cathodes for lithium-ion batteries"
+    context: "Current work · University of Chicago"
+    description: "Developing cathode materials based on covalent organic frameworks, with a focus on stable, high-capacity organic electrodes for lithium-ion batteries."
+  - title: "Electrochemical interfaces and catalysis"
+    context: "Doctoral research · University of Michigan"
+    description: "Studying how aqueous ions, electrode potential, and co-reactants influence adsorption and the hydrogenation of organic molecules. This work combines electronic-structure calculations, molecular dynamics, and comparisons with experiment."
+    link: "https://doi.org/10.1021/acs.jpcc.5c02870"
+    link_label: "Ion effects on adsorption"
+  - title: "Machine learning interatomic potentials"
+    context: "University of Michigan · Lawrence Livermore National Laboratory"
+    description: "Developing and benchmarking interatomic potentials for metal–electrolyte interfaces. These models make it possible to sample interfacial water and ions over longer times while retaining a connection to first-principles calculations."
+    link: "https://doi.org/10.1021/acselectrochem.5c00540"
+    link_label: "Potential-dependent interfacial properties"
+  - title: "Automated quantum chemistry"
+    context: "Ongoing collaboration"
+    description: "Developing TSAgent, an agentic workflow for transition-state searches at the density functional theory level. The workflow plans calculations, evaluates their results, and revises the search as it proceeds."
+    link: "https://arxiv.org/abs/2605.14154"
+    link_label: "Read the TSAgent preprint"
 
-stats:
-  publications: 10
-  countries: 3
-  awards: "8+"
+appointments:
+  - role: "Postdoctoral Scholar"
+    institution: "University of Chicago"
+    dates: "Sep 2026–present"
+  - role: "Graduate Research Assistant"
+    institution: "University of Michigan"
+    dates: "Aug 2021–Aug 2026"
+  - role: "Graduate Intern"
+    institution: "Lawrence Livermore National Laboratory"
+    dates: "Jun–Aug 2024"
+  - role: "Graduate Research Assistant / Research Assistant"
+    institution: "University of Alberta"
+    dates: "Jan 2018–Jan 2021"
 
 education:
-  - degree: "PhD, Chemical Engineering & Scientific Computing"
-    meta: "University of Michigan · 2021–Present"
-  - degree: "MSc, Chemical Engineering"
-    meta: "University of Alberta, Canada · 2018–2020"
-  - degree: "BTech, Chemical Engineering"
-    meta: "IIT (ISM) Dhanbad, India · 2013–2017"
+  - degree: "Ph.D., Chemical Engineering and Scientific Computing"
+    institution: "University of Michigan"
+    dates: "2021–2026"
+  - degree: "M.Sc., Chemical Engineering"
+    institution: "University of Alberta"
+    dates: "2018–2020"
+  - degree: "B.Tech., Chemical Engineering"
+    institution: "IIT (ISM) Dhanbad"
+    dates: "2013–2017"
+
+# Author lists follow publisher/arXiv records where these differ from the CV.
+# In-press status follows the supplied CV.
+publications:
+  - id: "tsagent"
+    title: "TSAgent: An Agentic Workflow for Autonomous Transition State Search"
+    authors: "Madhavan, V.; Mathanker, A.; Sweeney, D. M.; Ohiro, O. A.; Wang, Y.; Goldsmith, B. R."
+    venue: "arXiv:2605.14154"
+    year: 2026
+    status: "Preprint"
+    url: "https://arxiv.org/abs/2605.14154"
+  - id: "mlip-interfaces"
+    title: "Estimating potential-dependent physicochemical properties at metal–electrolyte interfaces using machine learning interatomic potentials"
+    authors: "Mathanker, A.; Guo, J.; Goldsmith, B. R.; Varley, J. B.; Govindarajan, N."
+    venue: "ACS Electrochemistry"
+    citation: "2 (5), 1176–1189"
+    year: 2026
+    url: "https://doi.org/10.1021/acselectrochem.5c00540"
+  - id: "benchmarking"
+    title: "Benchmarking short-range machine learning potentials for atomistic simulations of metal/electrolyte interfaces"
+    authors: "de Kam, L. B. T.; Zhu, J.-X.; Mathanker, A.; Doblhoff-Dier, K.; Govindarajan, N."
+    venue: "Journal of Chemical Physics"
+    citation: "In press; preprint arXiv:2602.22931"
+    year: 2026
+    url: "https://arxiv.org/abs/2602.22931"
+  - id: "ions-silver"
+    title: "Effect of ions on the aqueous-phase adsorption of small aromatic organics on silver"
+    authors: "Mathanker, A.; Sharma, G.; Tran, B.; Singh, N.; Goldsmith, B. R."
+    venue: "The Journal of Physical Chemistry C"
+    citation: "129 (29), 13433–13444"
+    year: 2025
+    url: "https://doi.org/10.1021/acs.jpcc.5c02870"
+  - id: "organic-mixtures"
+    title: "Synergistic effects in organic mixtures for enhanced catalytic hydrogenation and hydrodeoxygenation"
+    authors: "Mathanker, A.; Halarnkar, S.; Tran, B.; Singh, N.; Goldsmith, B. R."
+    venue: "Chem Catalysis"
+    citation: "4, 101135"
+    year: 2024
+    url: "https://doi.org/10.1016/j.checat.2024.101135"
+  - id: "ions-review"
+    title: "Effects of ions on electrocatalytic hydrogenation and oxidation of organics in aqueous phase"
+    authors: "Mathanker, A.; Yu, W.; Singh, N.; Goldsmith, B. R."
+    venue: "Current Opinion in Electrochemistry"
+    citation: "40, 101347"
+    year: 2023
+    url: "https://doi.org/10.1016/j.coelec.2023.101347"
+  - id: "cosolvents"
+    title: "Synergistic effect of water and co-solvents on the hydrothermal liquefaction of agricultural biomass to produce heavy oil"
+    authors: "Das, S.; Mathanker, A.; Pudasainee, D.; Khan, M.; Kumar, A.; Gupta, R."
+    venue: "International Journal of Energy for a Clean Environment"
+    citation: "23 (4), 31–45"
+    year: 2022
+    url: "https://doi.org/10.1615/InterJEnerCleanEnv.2022040354"
+  - id: "htl-review"
+    title: "A review of hydrothermal liquefaction of biomass for biofuels production with a special focus on the effect of process parameters, co-solvents and extraction solvents"
+    authors: "Mathanker, A.; Das, S.; Pudasainee, D.; Khan, M.; Kumar, A.; Gupta, R."
+    venue: "Energies"
+    citation: "14 (16), 4916"
+    year: 2021
+    url: "https://doi.org/10.3390/en14164916"
+  - id: "htl"
+    title: "Hydrothermal liquefaction of lignocellulosic biomass feedstock to produce biofuels: Parameter study and products characterization"
+    authors: "Mathanker, A.; Pudasainee, D.; Kumar, A.; Gupta, R."
+    venue: "Fuel"
+    citation: "271, 117534"
+    year: 2020
+    url: "https://doi.org/10.1016/j.fuel.2020.117534"
+
+thesis:
+  title: "Hydrothermal liquefaction of lignocellulosic biomass to produce biofuels"
+  institution: "University of Alberta"
+  year: 2020
+  url: "https://era.library.ualberta.ca/items/ff551bc6-9676-4108-a098-ca315250fa24"
+
+presentations:
+  - title: "Estimating potential-dependent physicochemical properties at metal–electrolyte interfaces using machine learning interatomic potentials"
+    event: "Gordon Research Conference · AI for Materials, Energy, and Chemical Science"
+    location: "Texas, USA"
+    year: 2026
+  - title: "Estimating water coverage and adsorption isotherms at electrolyte/metal interfaces using machine learning potentials"
+    event: "AIChE Annual Meeting · Catalysis and Reaction Engineering Division"
+    location: "Boston, Massachusetts"
+    year: 2025
+  - title: "Effect of ions on the aqueous-phase adsorption of small aromatic organics on silver"
+    event: "AIChE Annual Meeting · Catalysis and Reaction Engineering Division"
+    location: "Boston, Massachusetts"
+    year: 2025
+
+teaching:
+  - course: "CHE 538 · Statistical Thermodynamics"
+    role: "Graduate Teaching Assistant"
+    institution: "University of Michigan"
+    dates: "2023"
+  - course: "CHE 316 · Equilibrium Stage Processes"
+    role: "Graduate Teaching Assistant, spring and fall terms"
+    institution: "University of Alberta"
+    dates: "2019"
+  - course: "Graduate Teaching and Learning"
+    role: "Foundation and Practicum"
+    institution: "University of Alberta"
+    dates: "2018–2019"
+
+service:
+  - role: "Co-chair, Gordon Research Seminar"
+    organization: "AI for Materials, Energy and Chemical Sciences · Galveston, Texas"
+    dates: "2028 (upcoming)"
+  - role: "Graduate Student Director"
+    organization: "AIChE Catalysis and Reaction Engineering Division"
+    dates: "2025–2027"
+  - role: "Graduate Student Representative"
+    organization: "Michigan Chapter of the North American Catalysis Society"
+    dates: "2022–2024"
+
+awards:
+  - name: "Visionary Award for RedoxFlow"
+    organization: "LLM Hackathon for Applications in Materials and Chemistry"
+    url: "https://github.com/CGruich/RedoxFlow"
+  - name: "CRE Division Travel Award"
+    organization: "AIChE Annual Meeting"
+  - name: "Rackham Travel Award"
+    organization: "University of Michigan · 2022, 2023, 2024"
+  - name: "Captain Thomas Farrell Greenhalgh Memorial Graduate Scholarship"
+    organization: "University of Alberta"
+  - name: "Mary Louise Imrie Graduate Student Award"
+    organization: "University of Alberta"
+  - name: "Graduate Student Association Travel Award"
+    organization: "University of Alberta"
+  - name: "Summer Research Fellowship Programme Scholarship"
+    organization: "Indian Academy of Science"
 
 links:
   website: "https://ankitmathanker.github.io/"
   cv: "https://ankitmathanker.github.io/assets/CV_AnkitMathanker.pdf"
-  email: "ankitma@umich.edu"
+  email: "ankitm@uchicago.edu"
   scholar: "https://scholar.google.com/citations?user=1PwEl2AAAAAJ&hl=en"
   github: "https://github.com/ankitmathanker"
-  linkedin: ""
-
-contact_lead: "Open to collaborations and research discussions."

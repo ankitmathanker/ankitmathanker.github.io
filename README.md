@@ -1,47 +1,51 @@
-# ankitmathanker.github.io
+# Ankit Mathanker — academic website
 
-Static academic portfolio for **Ankit Mathanker** (PhD Candidate, Chemical Engineering & Scientific Computing, University of Michigan). Hosted with [GitHub Pages](https://pages.github.com/) at [ankitmathanker.github.io](https://ankitmathanker.github.io).
+Personal academic website for Ankit Mathanker, Postdoctoral Scholar at the University of Chicago / Argonne National Laboratory. Published at [ankitmathanker.github.io](https://ankitmathanker.github.io/).
 
-## Structure
+The site uses static HTML, CSS, and a small script for the mobile menu. Visitors need no JavaScript to read the content, follow links, or access the CV. There are no runtime dependencies, external fonts, or build requirements for GitHub Pages.
 
-- `index.html` — Single-page layout (semantic HTML5)
-- `css/style.css` — All styling (dark theme, glass cards, responsive grid)
-- `js/main.js` — Particle background, mobile nav, photo toggle, smooth scrolling
-- `img/` — Profile and simulation images (see below)
-- `assets/CV_AnkitMathanker.pdf` — Curriculum vitae (replace when you update your CV)
+## Updating content
 
-No build step, frameworks, or npm — open `index.html` locally or push to GitHub.
+`profile.yaml` contains the biography, appointments, education, publications, presentations, teaching, service, awards, and links. Both the website and GitHub profile README use this file.
 
-## CV
+```sh
+python3 -m pip install -r requirements-generate.txt
+python3 scripts/generate_site.py
+python3 scripts/generate_profile_readme.py --output profile_readme.md
+python3 scripts/generate_site.py --check
+```
 
-Update the PDF at `assets/CV_AnkitMathanker.pdf` when your CV changes. Links are in the nav (**CV**), hero (**Download CV**), and Contact section.
+Commit `profile.yaml` and the regenerated `index.html`. The profile sync workflow generates the README for [ankitmathanker/ankitmathanker](https://github.com/ankitmathanker/ankitmathanker) when content changes land on `main`. It requires the existing `PROFILE_REPO_TOKEN` repository secret with content write access to that profile repository.
 
-## Images to add
+Publication entries distinguish preprints and in-press articles; the master's thesis is listed separately. Use publisher or arXiv author lists when a citation in the CV is abbreviated or differs from the public record. Source details for the October 2026 update are in [CONTENT_NOTES.md](CONTENT_NOTES.md).
 
-Place these files in `img/`:
+## Replacing the CV
+
+Replace `assets/CV_AnkitMathanker.pdf` in place. All website and profile README links use that stable path. Update `profile.yaml` to reflect any changed role, dates, contact details, or publications, then regenerate the HTML. The PDF itself is not rewritten by the generators.
+
+## Design and files
 
 | File | Purpose |
-|------|---------|
-| `photo-real.png` | Default profile photo (hero) |
-| `photo-ghibli.png` | Alternate photo (use the **Toggle photo** button) |
-| `simulation.png` | Full-width simulation showcase |
+| --- | --- |
+| `profile.yaml` | Shared public content |
+| `templates/index.html` | Page structure and metadata |
+| `scripts/generate_site.py` | Generates the checked-in `index.html` |
+| `scripts/generate_profile_readme.py` | Generates the GitHub profile README |
+| `css/style.css` | Responsive layout, typography, and print styles |
+| `js/main.js` | Accessible mobile navigation |
+| `img/photo-real.png` | Existing portrait |
+| `assets/CV_AnkitMathanker.pdf` | Current CV |
 
-If you rename files or switch to JPEG, update the `<img>` `src` in `index.html` and the `PHOTO_PATHS` array at the top of `js/main.js`.
+The previous background script, alternate portrait, simulation image, and graphical abstracts remain in the repository as unused assets. The current page does not load them.
 
-## Social links
+## Preview and deployment
 
-In `index.html`, search for `TODO: add` — replace the placeholder LinkedIn URL if needed. Google Scholar and GitHub links are set in the Contact section. Publication titles link to DOIs or arXiv where applicable.
-
-## Deploy
-
-Push to the `main` branch of `github.com/ankitmathanker/ankitmathanker.github.io`. GitHub Pages serves `index.html` from the repository root automatically.
-
-If GitHub Pages does not deploy the latest `main` commit, manually queue a rebuild with GitHub CLI:
-
-```powershell
-gh api -X POST repos/ankitmathanker/ankitmathanker.github.io/pages/builds
+```sh
+python3 -m http.server 4173 --bind 127.0.0.1
 ```
+
+Open [the local preview](http://127.0.0.1:4173/). Check desktop and mobile layouts, navigation, publication links, and the CV before publishing. Run the generator with `--check` to verify that the HTML matches the shared content and template. Push the generated files to `main`; GitHub Pages serves the repository root.
 
 ## License
 
-Site content © Ankit Mathanker. Code in this repository may be reused with attribution for personal academic sites.
+Site content © Ankit Mathanker. Code may be reused with attribution for personal academic sites.
