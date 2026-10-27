@@ -43,7 +43,12 @@ def render(data: dict, template: str) -> str:
             f'<p class="publication__venue"><em>{e(paper["venue"])}</em>{citation} '
             f'({e(paper["year"])}){status}.</p></li>'
         )
-    thesis = data["thesis"]
+    theses = "\n".join(
+        f'<div class="thesis" id="{e(row["id"])}"><h3>{e(row["label"])}</h3>'
+        f'<p>{link(row["url"], row["title"]) if row.get("url") else e(row["title"])}</p>'
+        f'<p class="muted">{e(row["institution"])}, {e(row["year"])}.</p></div>'
+        for row in data["theses"]
+    )
     presentations = "\n".join(
         f'<li class="presentation"><h3>{e(row["title"])}</h3><p>{e(row["event"])}<br>'
         f'{e(row["location"])} · {e(row["year"])}</p></li>' for row in data["presentations"]
@@ -71,8 +76,7 @@ def render(data: dict, template: str) -> str:
         "year": e(data["site"]["updated"].split()[-1]),
         "bio": "\n".join(f"<p>{e(p)}</p>" for p in data["about_paragraphs"]),
         "research": "\n".join(research), "publications": "\n".join(publications),
-        "thesis": link(thesis["url"], thesis["title"]),
-        "thesis_meta": f'M.Sc. thesis, {e(thesis["institution"])}, {e(thesis["year"])}.',
+        "theses": theses,
         "appointments": "\n".join(record(r["role"], r["institution"], r["dates"]) for r in data["appointments"]),
         "education": "\n".join(record(r["degree"], r["institution"], r["dates"]) for r in data["education"]),
         "presentations": presentations,

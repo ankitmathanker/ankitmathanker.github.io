@@ -128,11 +128,18 @@ publications:
     year: 2020
     url: "https://doi.org/10.1016/j.fuel.2020.117534"
 
-thesis:
-  title: "Hydrothermal liquefaction of lignocellulosic biomass to produce biofuels"
-  institution: "University of Alberta"
-  year: 2020
-  url: "https://era.library.ualberta.ca/items/ff551bc6-9676-4108-a098-ca315250fa24"
+theses:
+  - id: "phd-dissertation"
+    label: "Ph.D. dissertation"
+    title: "Molecular-Level Insights into Organic Adsorption and Reactivity at Electrode-Electrolyte Interfaces"
+    institution: "University of Michigan"
+    year: 2026
+  - id: "masters-thesis"
+    label: "Master’s thesis"
+    title: "Hydrothermal liquefaction of lignocellulosic biomass to produce biofuels"
+    institution: "University of Alberta"
+    year: 2020
+    url: "https://era.library.ualberta.ca/items/ff551bc6-9676-4108-a098-ca315250fa24"
 
 presentations:
   - title: "Estimating potential-dependent physicochemical properties at metal–electrolyte interfaces using machine learning interatomic potentials"

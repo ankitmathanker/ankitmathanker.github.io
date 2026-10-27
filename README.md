@@ -6,7 +6,7 @@ The site uses static HTML, CSS, and a small script for the mobile menu. Visitors
 
 ## Updating content
 
-`profile.yaml` contains the biography, appointments, education, publications, presentations, teaching, service, awards, and links. Both the website and GitHub profile README use this file.
+`profile.yaml` contains the biography, appointments, education, publications, theses, presentations, teaching, service, awards, and links. Both the website and GitHub profile README use this file.
 
 ```sh
 python3 -m pip install -r requirements-generate.txt
@@ -17,7 +17,7 @@ python3 scripts/generate_site.py --check
 
 Commit `profile.yaml` and the regenerated `index.html`. The profile sync workflow generates the README for [ankitmathanker/ankitmathanker](https://github.com/ankitmathanker/ankitmathanker) when content changes land on `main`. It requires the existing `PROFILE_REPO_TOKEN` repository secret with content write access to that profile repository.
 
-Publication entries distinguish preprints and in-press articles; the master's thesis is listed separately. Use publisher or arXiv author lists when a citation in the CV is abbreviated or differs from the public record. Source details for the October 2026 update are in [CONTENT_NOTES.md](CONTENT_NOTES.md).
+Publication entries distinguish preprints and in-press articles; doctoral and master's theses are listed separately. Thesis URLs are optional: leave out `url` until a repository record or PDF is available. Use publisher or arXiv author lists when a citation in the CV is abbreviated or differs from the public record. Source details for the October 2026 update are in [CONTENT_NOTES.md](CONTENT_NOTES.md).
 
 ## Replacing the CV
 

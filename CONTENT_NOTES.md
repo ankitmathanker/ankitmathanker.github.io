@@ -9,7 +9,8 @@ The supplied `assets/CV_AnkitMathanker.pdf` is the source for the current appoin
 - **Benchmarking short-range potentials:** Update “in review” to “in press” in *Journal of Chemical Physics*, following the supplied CV. Keep the [arXiv link](https://arxiv.org/abs/2602.22931); a final journal DOI or pagination was not established in this update.
 - **Hydrothermal liquefaction review:** Use the full title and six-author list, including Amit Kumar, from the [publisher PDF](https://mdpi-res.com/d_attachment/energies/energies-14-04916/article_deploy/energies-14-04916.pdf). The CV omits Kumar from this entry.
 - **2022 biomass article:** Retain the CV's title, authors, volume, and pages. Replace the old Google Scholar citation link with DOI `10.1615/InterJEnerCleanEnv.2022040354`.
-- List nine articles/preprints and the master's thesis separately, without a publication-count headline.
+- List nine articles/preprints and both theses separately, without a publication-count headline.
+- **Michigan Ph.D. dissertation:** Add *Molecular-Level Insights into Organic Adsorption and Reactivity at Electrode-Electrolyte Interfaces*, University of Michigan (2026), from the revised CV. No dissertation PDF or repository URL was supplied; render the title as text until a verified link is available. Preserve the existing Alberta master's thesis and repository link.
 
 ## Editorial decisions
 

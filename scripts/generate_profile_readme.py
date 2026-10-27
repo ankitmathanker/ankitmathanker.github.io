@@ -31,7 +31,13 @@ def render(data: dict) -> str:
         citation = f", {paper['citation']}" if paper.get("citation") else ""
         lines.append(f"- [{paper['title']}]({paper['url']}). "
                      f"*{paper['venue']}*{citation} ({paper['year']}).")
-    lines.extend(["", f"[Full publication list]({links['website']}#publications)", "", "## Education", ""])
+    lines.extend(["", f"[Full publication list]({links['website']}#publications)", "", "## Theses", ""])
+    for thesis in data["theses"]:
+        title = (f"[{thesis['title']}]({thesis['url']})"
+                 if thesis.get("url") else thesis["title"])
+        lines.append(f"- **{thesis['label']}:** {title}. "
+                     f"{thesis['institution']} ({thesis['year']}).")
+    lines.extend(["", "## Education", ""])
     for row in data["education"]:
         lines.append(f"- **{row['degree']}** — {row['institution']}, {row['dates']}")
     lines.extend(["", "## Academic service", ""])
