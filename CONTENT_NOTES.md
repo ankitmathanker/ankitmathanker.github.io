@@ -10,7 +10,7 @@ The supplied `assets/CV_AnkitMathanker.pdf` is the source for the current appoin
 - **Hydrothermal liquefaction review:** Use the full title and six-author list, including Amit Kumar, from the [publisher PDF](https://mdpi-res.com/d_attachment/energies/energies-14-04916/article_deploy/energies-14-04916.pdf). The CV omits Kumar from this entry.
 - **2022 biomass article:** Retain the CV's title, authors, volume, and pages. Replace the old Google Scholar citation link with DOI `10.1615/InterJEnerCleanEnv.2022040354`.
 - List nine articles/preprints and both theses separately, without a publication-count headline.
-- **Michigan Ph.D. dissertation:** Add *Molecular-Level Insights into Organic Adsorption and Reactivity at Electrode-Electrolyte Interfaces*, University of Michigan (2026), from the revised CV. No dissertation PDF or repository URL was supplied; render the title as text until a verified link is available. Preserve the existing Alberta master's thesis and repository link.
+- **Michigan Ph.D. dissertation:** Add *Molecular-Level Insights into Organic Adsorption and Reactivity at Electrode-Electrolyte Interfaces*, University of Michigan (2026), from the revised CV. Link the dissertation title to the [Deep Blue repository record](https://deepblue.lib.umich.edu/items/058cefb1-9d45-4b97-8229-6c8b1b3746bf) supplied by the author. Preserve the existing Alberta master's thesis and repository link.
 
 ## Editorial decisions
 
