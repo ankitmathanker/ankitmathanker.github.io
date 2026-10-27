@@ -142,6 +142,18 @@ theses:
     year: 2020
     url: "https://era.library.ualberta.ca/items/ff551bc6-9676-4108-a098-ca315250fa24"
 
+upcoming_presentations:
+  - id: "aiche-2026-candidate-poster"
+    title: "Molecular-Scale Computation for Electrocatalytic Systems: From Interfacial Dynamics to Autonomous Transition State Search"
+    format: "Poster"
+    event: "AIChE 2026 Annual Meeting"
+    session: "Meet the Faculty and Post-Doc Candidates Poster Session"
+    starts_at: "2026-11-08T13:00:00-06:00"
+    date: "Sunday, November 8, 2026"
+    time: "1:00–3:00 p.m. CST"
+    venue: "Exhibit Hall B, Minneapolis Convention Center"
+    paper_id: "742537"
+
 presentations:
   - title: "Estimating potential-dependent physicochemical properties at metal–electrolyte interfaces using machine learning interatomic potentials"
     event: "Gordon Research Conference · AI for Materials, Energy, and Chemical Science"

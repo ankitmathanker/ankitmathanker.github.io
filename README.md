@@ -19,6 +19,10 @@ Commit `profile.yaml` and the regenerated `index.html`. The profile sync workflo
 
 Publication entries distinguish preprints and in-press articles; doctoral and master's theses are listed separately. Thesis URLs are optional: leave out `url` until a repository record or PDF is available. Use publisher or arXiv author lists when a citation in the CV is abbreviated or differs from the public record. Source details for the October 2026 update are in [CONTENT_NOTES.md](CONTENT_NOTES.md).
 
+## Upcoming talks and posters
+
+Edit `upcoming_presentations` in `profile.yaml` to update the conference schedule near the top of the website. Each entry includes its title, format, event, session, local date and time, venue, and paper ID. Keep `starts_at` in ISO 8601 format with the event's UTC offset. After an event, remove it from this list and add it to `presentations` if it belongs in the selected presentation history. Regenerate `index.html` after changes.
+
 ## Replacing the CV
 
 Replace `assets/CV_AnkitMathanker.pdf` in place. All website and profile README links use that stable path. Update `profile.yaml` to reflect any changed role, dates, contact details, or publications, then regenerate the HTML. The PDF itself is not rewritten by the generators.

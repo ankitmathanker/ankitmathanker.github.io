@@ -49,6 +49,15 @@ def render(data: dict, template: str) -> str:
         f'<p class="muted">{e(row["institution"])}, {e(row["year"])}.</p></div>'
         for row in data["theses"]
     )
+    upcoming_presentations = "\n".join(
+        f'<li class="presentation" id="{e(row["id"])}">'
+        f'<p class="eyebrow">{e(row["format"])} · {e(row["event"])}</p>'
+        f'<h3>{e(row["title"])}</h3><p>{e(row["session"])}</p>'
+        f'<p><time datetime="{e(row["starts_at"])}">{e(row["date"])}</time>'
+        f' · {e(row["time"])}<br>{e(row["venue"])}</p>'
+        f'<p>Paper ID: {e(row["paper_id"])}</p></li>'
+        for row in data.get("upcoming_presentations", [])
+    )
     presentations = "\n".join(
         f'<li class="presentation"><h3>{e(row["title"])}</h3><p>{e(row["event"])}<br>'
         f'{e(row["location"])} · {e(row["year"])}</p></li>' for row in data["presentations"]
@@ -79,6 +88,7 @@ def render(data: dict, template: str) -> str:
         "theses": theses,
         "appointments": "\n".join(record(r["role"], r["institution"], r["dates"]) for r in data["appointments"]),
         "education": "\n".join(record(r["degree"], r["institution"], r["dates"]) for r in data["education"]),
+        "upcoming_presentations": upcoming_presentations,
         "presentations": presentations,
         "teaching": "\n".join(record(r["course"], r["role"] + " · " + r["institution"], r["dates"]) for r in data["teaching"]),
         "service": "\n".join(record(r["role"], r["organization"], r["dates"]) for r in data["service"]),

@@ -25,6 +25,7 @@
       <a class="nav__name" href="#about">$name</a>
       <button class="nav__toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" hidden>Menu <span aria-hidden="true">+</span></button>
       <ul class="nav__menu" id="nav-menu">
+        <li><a href="#upcoming">Upcoming</a></li>
         <li><a href="#research">Research</a></li>
         <li><a href="#publications">Publications</a></li>
         <li><a href="#background">Background</a></li>
@@ -54,6 +55,11 @@
         <img src="$image" alt="Portrait of $name" width="848" height="1024" fetchpriority="high">
         <figcaption>$tagline</figcaption>
       </figure>
+    </section>
+
+    <section id="upcoming" class="section" aria-labelledby="upcoming-heading">
+      <div class="section__label"><h2 id="upcoming-heading">Upcoming talks &amp; posters</h2><p>Conference schedule</p></div>
+      <ul class="section__body presentations">$upcoming_presentations</ul>
     </section>
 
     <section id="research" class="section" aria-labelledby="research-heading">
