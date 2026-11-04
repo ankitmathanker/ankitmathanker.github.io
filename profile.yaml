@@ -2,7 +2,7 @@
 # and scripts/generate_profile_readme.py after making changes.
 site:
   base_url: "https://ankitmathanker.github.io"
-  updated: "October 2026"
+  updated: "November 2026"
 name: "Ankit Mathanker"
 title: "Postdoctoral Scholar"
 affiliation: "University of Chicago / Argonne National Laboratory"
@@ -216,3 +216,4 @@ links:
   email: "ankitm@uchicago.edu"
   scholar: "https://scholar.google.com/citations?user=1PwEl2AAAAAJ&hl=en"
   github: "https://github.com/ankitmathanker"
+  linkedin: "https://www.linkedin.com/in/ankit-mathanker"

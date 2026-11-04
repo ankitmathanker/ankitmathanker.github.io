@@ -20,7 +20,8 @@ def render(data: dict) -> str:
         "<!-- Generated from profile.yaml in ankitmathanker/ankitmathanker.github.io. -->", "",
         f"# {data['name']}", "", f"**{data['title']}**  ", data["affiliation"], "",
         f"[Website]({links['website']}) · [CV (PDF)]({links['cv']}) · "
-        f"[Google Scholar]({links['scholar']}) · [Email](mailto:{links['email']})", "",
+        f"[Google Scholar]({links['scholar']}) · [LinkedIn]({links['linkedin']}) · "
+        f"[Email](mailto:{links['email']})", "",
         *[paragraph + "\n" for paragraph in data["about_paragraphs"][:2]],
         "## Research", "",
     ]

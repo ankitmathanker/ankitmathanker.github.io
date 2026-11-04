@@ -75,7 +75,7 @@ def render(data: dict, template: str) -> str:
             {"@type": "Organization", "name": "University of Chicago"},
             {"@type": "Organization", "name": "Argonne National Laboratory"},
         ],
-        "sameAs": [data["links"]["scholar"], data["links"]["github"]],
+        "sameAs": [data["links"]["scholar"], data["links"]["github"], data["links"]["linkedin"]],
     }
     values = {
         "name": e(data["name"]), "title": e(data["title"]), "affiliation": e(data["affiliation"]),

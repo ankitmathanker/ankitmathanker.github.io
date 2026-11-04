@@ -43,13 +43,14 @@
         <p class="intro__role">$title</p>
         <p class="intro__affiliation">$affiliation</p>
         <p class="intro__location">$location</p>
-        <div class="intro__bio">$bio</div>
         <ul class="text-links" aria-label="Profile links">
           <li><a href="mailto:$email">Email</a></li>
           <li><a href="$scholar">Google Scholar</a></li>
+          <li><a href="$linkedin">LinkedIn</a></li>
           <li><a href="$github">GitHub</a></li>
           <li><a href="assets/CV_AnkitMathanker.pdf">Curriculum vitae <span class="file-label">(PDF)</span></a></li>
         </ul>
+        <div class="intro__bio">$bio</div>
       </div>
       <figure class="intro__portrait">
         <img src="$image" alt="Portrait of $name" width="848" height="1024" fetchpriority="high">
@@ -103,7 +104,7 @@
 
     <section id="contact" class="section contact" aria-labelledby="contact-heading">
       <div class="section__label"><h2 id="contact-heading">Contact</h2></div>
-      <div class="section__body"><p class="contact__affiliation">$affiliation</p><a class="contact__email" href="mailto:$email">$email</a><p class="muted">For research correspondence and collaboration.</p><p><a href="assets/CV_AnkitMathanker.pdf">Curriculum vitae (PDF)</a></p></div>
+      <div class="section__body"><p class="contact__affiliation">$affiliation</p><a class="contact__email" href="mailto:$email">$email</a><p class="muted">For research correspondence and collaboration.</p><ul class="text-links" aria-label="Contact profile links"><li><a href="$scholar">Google Scholar</a></li><li><a href="$linkedin">LinkedIn</a></li><li><a href="$github">GitHub</a></li><li><a href="assets/CV_AnkitMathanker.pdf">Curriculum vitae (PDF)</a></li></ul></div>
     </section>
   </main>
   <footer class="site-footer page-width"><p>© $year $name</p><p>Updated $updated</p><a href="#about">Back to top <span aria-hidden="true">↑</span></a></footer>
